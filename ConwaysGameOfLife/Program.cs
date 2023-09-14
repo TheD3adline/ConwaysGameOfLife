@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Board board = new Board(32, 24);
-            board.Run();
+            Editor editor = new Editor(32, 24);
+            editor.StartEditor();
         }
     }
 }

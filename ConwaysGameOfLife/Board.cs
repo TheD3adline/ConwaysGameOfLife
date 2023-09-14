@@ -34,6 +34,21 @@ namespace ConwaysGameOfLife
             }
         }
 
+        public Board(bool[,] boardConfig)
+        {
+            Fields = new Cell[boardConfig.GetLength(0), boardConfig.GetLength(1)];
+            Generation = 1;
+
+            Random rnd = new Random();
+            for (int y = 0; y < Fields.GetLength(1); y++)
+            {
+                for (int x = 0; x < Fields.GetLength(0); x++)
+                {
+                    Fields[x, y] = new Cell(boardConfig[x, y]);
+                }
+            }
+        }
+
         public void Run()
         {
             Console.CursorVisible = false;
