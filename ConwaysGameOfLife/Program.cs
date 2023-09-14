@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            
+            Board board = new Board(32, 24);
+            board.Run();
         }
     }
 }

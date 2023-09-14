@@ -17,5 +17,30 @@ namespace ConwaysGameOfLife
         {
             Alive = alive;
         }
+
+        public void CheckNextCellStatus()
+        {
+            LastGenerationStatus = Alive;
+
+            if (Alive == false)
+            {
+                if (AmountOfNeighbours == 3)
+                    AliveNextRound = true;
+            }
+            else
+            {
+                if (AmountOfNeighbours < 2)
+                    AliveNextRound = false;
+                else if (AmountOfNeighbours == 2 || AmountOfNeighbours == 3)
+                    AliveNextRound = true;
+                else if (AmountOfNeighbours > 3)
+                    AliveNextRound = false;
+            }
+        }
+
+        public void Update()
+        {
+            Alive = AliveNextRound;
+        }
     }
 }
